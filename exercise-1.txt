@@ -1,0 +1,38 @@
+1. 
+
+STORE "massa_benda" = 600;
+STORE "percepatan" = 2;
+
+DECLARE "resultan_gaya";
+
+CALCULATE "masa_benda" times "percepatan";
+
+SET "resultan_gaya" with calculation result;
+
+2.
+
+STORE "tahun" with any value;
+
+IF ("tahun" mod 4 equal 0 AND "tahun" mod 100 equal 0) OR ("tahun" mod 4 equal 0 AND "tahun" mod 100 equal 0 AND "tahun" mod 400 equal 0)
+	DISPLAY "Tahun Kabisat";
+ELSE
+	DISPLAY "Bukan Tahun Kabisat";
+
+3.
+
+STORE "jumlah_cucian" = 20;
+STORE "jumlah_cucian_di_mesin_cuci" =0;
+
+WHILE ("jumlah_cucian_di_mesin_cuci" not equal "jumlah_cucian")
+	CALCULATE "jumlah_cucian" add 1;
+	IF ("jumlah_cucian_di_mesin_cuci" equal "jumlah_cucian")
+		DISPLAY "Mesin Cuci Nyala";
+
+4.
+
+STORE "murid_murid" with STUDENT object;
+
+FOREACH ("murid_murid" as "murid")
+	IF("murid"."kuku" equal "panjang")
+		DISPLAY "murid"."name"+'get punisment';
+
