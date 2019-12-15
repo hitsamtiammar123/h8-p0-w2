@@ -1,5 +1,5 @@
 var nama='Hitsam';
-var peran='';
+var peran='ksatria';
 
 if(nama==='')
     console.log('Nama harus diisi');
