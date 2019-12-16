@@ -25,7 +25,7 @@ for(var i=0;i<rows2;i++){
 var rows3=5; // input the number of rows
 
 // do loops to display asterisks in the console.
-for(var i=0;i<rows2;i++){
+for(var i=0;i<rows3;i++){
     var asterisks='';
     for(var j=0;j<i;j++)
         asterisks+='*';
