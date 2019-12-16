@@ -7,6 +7,7 @@ for(var i=0;i<rows1;i++){
     console.log("*");
 }
 
+console.log('');
 //2. Menyusun Barisan Bintang Dengan Nested Looping
 
 var rows2=5; // input the number of rows
