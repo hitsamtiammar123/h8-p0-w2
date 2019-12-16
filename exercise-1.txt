@@ -34,5 +34,5 @@ STORE "murid_murid" with STUDENT object;
 
 FOREACH ("murid_murid" as "murid")
 	IF("murid"."kuku" equal "panjang")
-		DISPLAY "murid"."name"+'get punisment';
+		DISPLAY name of "murid" that get punishment;
 
