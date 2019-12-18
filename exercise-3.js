@@ -1,10 +1,10 @@
 var nama='Hitsam';
-var peran='ksatria';
+var peran='';
 
 if(nama==='')
     console.log('Nama harus diisi');
 else if(peran==='')
-    console.log('Peran harus diisi')
+    console.log(`Halo ${nama}, Pilih Peranmu untuk memulai game`);
 else{
     console.log(`Selamat datang di Dunia Proxytia, ${nama}`);
     
