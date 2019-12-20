@@ -28,6 +28,22 @@
 
 function firstArrived(cars) {
   // code below here
+  const carColors=['kuning','merah','hitam'];
+
+  var listCarsByPlat=[];
+  for(var i=0;i<carColors.length;i++){
+    var color=carColors[i];
+    var carsByPlat=[];
+    for(var j=0;j<cars.length;j++){
+      var car=cars[j];
+      if(car[1]===color)
+        listCarsByPlat.push(car[0]);
+    }
+  }
+
+  return listCarsByPlat;
+
+
 };
 
 //TEST CASE
