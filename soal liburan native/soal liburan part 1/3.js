@@ -32,6 +32,29 @@
 
 function mostCarsByState (cars) {
   //code below here
+  var plats=[];
+  var countPlats=[];
+  
+  for(var i=0;i<cars.length;i++){
+    var c=cars[i];
+    if(plats.indexOf(c)===-1){
+      plats.push(c);
+      countPlats.push(1);
+    }
+    else{
+      var indexPlat=plats.indexOf(c);
+      countPlats[indexPlat]++;
+    }
+  }
+
+  var result=[];
+  for(var i=0;i<plats.length;i++){
+    var plat=plats[i];
+    result.push(plat);
+    result.push(countPlats[i]/cars.length * 100);
+  }
+
+  return result;
 };
 
 console.log(mostCarsByState(['B', 'D', 'B', 'B', 'A', 'C', 'D']));
