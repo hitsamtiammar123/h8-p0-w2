@@ -23,13 +23,47 @@ RULES
 
 //Pseudocode
 /**
+ *   STORE "listNumb" as array
+ *   add "first","second", and "third" into "listNumb"
+ * 	 sort "listNumb" ascending
  * 
+ * 	STORE "displayStr" as empty string
+ *  STORE "counter" as 0
  * 
+ *  FOR each number start from first index of "listNumb" until last index of "listNumb"
+ * 	
+ * 	IF number is not equal second index of "listNumb"
+ * 		IF "counter" is more than 0
+ * 			CONCAT "displayStr" by ", "
+ * 		END IF
+ * 		
+ * 		CONCAT "displayStr" by "number"
+ * 		INCREMENT "counter" by 1	
  * 
+ *  END IF
+ * 
+ * 	END FOR
+ * 
+ * RETURN "displayStr" if not empty, if empty DISPLAY "Tidak ada angka sama sekali"
  *
  */
 
 function lostNumbers(first, second, third) {
+	var listNumb=[first,second,third].sort();
+
+	var displayStr='';
+	var counter=0;
+	for(var i=listNumb[0]+1;i<listNumb[2];i++){
+		if(i!==listNumb[1]){
+			if(counter>0)
+				displayStr+=', ';
+
+			displayStr+=i;
+			counter++;
+		}
+	}
+
+	return displayStr?displayStr:'Tidak ada angka sama sekali';
 
 }
 

@@ -32,10 +32,33 @@
  */
 
 function mineCraft(tambang) {
+    
+    var mines=0;
+    for(var i=0;i<tambang.length;i++){
+        switch(tambang[i]){
+            case 'g':
+                mines+=80;
+            break;
+            case 'i':
+                mines+=30;
+            break;
+            case 'c':
+                mines+=20;
+            break;
+            case 's':
+                mines+=40;
+            break;
+            case 'd':
+                mines+=1000;
+            break;
+        }
+    }
+
+    return mines?mines:'Tidak ada mineral sama sekali';
 
 }
 
-console.log(mineCraft('#g####c##s')); //120
+console.log(mineCraft('#g####c##s')); //140
 console.log(mineCraft('######w###q###')); //Tidak ada mineral sama sekali
 console.log(mineCraft('#sdgicp##')); //1170
 console.log(mineCraft('')); //Tidak ada mineral sama sekali
