@@ -30,6 +30,14 @@
 
 */
 
+function indexOf(arr,elem){
+  for(var i=0;i<arr.length;i++)
+    if(arr[i]===elem)
+      return i;
+  return -1;
+}
+
+
 function mostCarsByState (cars) {
   //code below here
   var plats=[];
@@ -37,12 +45,12 @@ function mostCarsByState (cars) {
   
   for(var i=0;i<cars.length;i++){
     var c=cars[i];
-    if(plats.indexOf(c)===-1){
+    if(indexOf(plats,c)===-1){
       plats.push(c);
       countPlats.push(1);
     }
     else{
-      var indexPlat=plats.indexOf(c);
+      var indexPlat=indexOf(plats,c);
       countPlats[indexPlat]++;
     }
   }

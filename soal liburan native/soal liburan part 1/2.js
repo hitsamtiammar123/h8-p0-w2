@@ -27,29 +27,39 @@
 
 */
 
-function winner (cars, totalKM) {
-  //code below here
-
-  for(var i=0;i<cars.length;i++){
-    var car=cars[i];
-    car.push(((totalKM-car[2])/car[1]).toPrecision(3));
-  }
-  
-  for(var i=0;i<cars.length;i++){
-    for(var j=0;j<cars.length-i-1;j++){
-      if(cars[j][3]>cars[j+1][3]){
-        var temp=cars[j];
-        cars[j]=cars[j+1];
-        cars[j+1]=temp;
+function sort(arr,callback){
+  for(var i=0;i<arr.length;i++){
+    for(var j=0;j<arr.length-i-1;j++){
+      var c=callback?callback(arr[j],arr[j+1]):true
+      if(callback(arr[j],arr[j+1])){
+        var temp=arr[j];
+        arr[j]=arr[j+1];
+        arr[j+1]=temp;
       }
     }
   }
 
-  var onlyPlatNo=[];
-  for(var i=0;i<cars.length;i++)
-    onlyPlatNo.push(cars[i][0]);
+}
 
-  return onlyPlatNo;
+function walk(arr,callback){
+  for(var i=0;i<arr.length;i++)
+    callback(arr[i]);
+}
+
+function map(arr,callback){
+  var newArr=[];
+  for(var i=0;i<arr.length;i++)
+    newArr[i]=callback(arr[i]);
+  return newArr;
+}
+
+function winner (cars, totalKM) {
+  //code below here
+
+  walk(cars,(a)=>a.push(((totalKM-a[2])/a[1]).toPrecision(3)));
+  sort(cars,(car,car2)=>car[3]>car2[3]?true:false);
+  
+  return map(cars,(car)=>car[0]);
 
 };
 
