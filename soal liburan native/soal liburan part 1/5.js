@@ -9,9 +9,40 @@
   console.log(palindromeChanger([102, 12, 47]))
   // [ 111, 22, 55]
 */
-function palindromeChanger(numbers) {
-  // code below here
+
+function reverse(str){
+  var newStr='';
+  for(var i=str.length-1;i>=0;i--){
+    newStr+=str[i];
+  }
+  return newStr;
 }
 
-console.log(palindromeChanger([117, 9, 20, 30, 42]))
+function palindromeChanger(numbers) {
+  // code below here
+  for(var i=0;i<numbers.length;i++){
+    var num=numbers[i];
+    var numRevers='';
+    var numStr='';
+    var isPalindrome=false;
+    do{
+      numStr=num.toString();
+      numRevers=reverse(numStr);
+
+      if(numStr!==numRevers)
+        num++;
+      else
+        isPalindrome=true;
+      
+    }while(!isPalindrome);
+    numbers[i]=num;
+  }
+
+  return numbers;
+}
+
+console.log(palindromeChanger([117, 9, 20, 30, 42]));
 // [ 121, 9, 22, 33, 44 ]
+console.log(palindromeChanger([102, 12, 47]));
+// [ 111, 22, 55]
+

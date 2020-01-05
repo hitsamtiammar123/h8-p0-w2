@@ -18,6 +18,19 @@ console.log(getCoordinates(array))
 */
 function getCoordinates(arr) {
   // code below here
+  var result=[];
+
+  for(var i=1;i<arr.length;i++){
+    var elem=arr[i];
+    var angka=arr[i][0];
+    for(var j=1;j<elem.length;j++){
+      var elem2=elem[j];
+      var huruf=arr[0][j];
+      if(elem2==='x')
+        result.push(huruf+angka);
+    }
+  }
+  return result;
 }
 
 var array = [

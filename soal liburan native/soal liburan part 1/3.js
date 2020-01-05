@@ -37,6 +37,13 @@ function indexOf(arr,elem){
   return -1;
 }
 
+function map(arr,callback){
+  var newArr=[];
+  for(var i=0;i<arr.length;i++)
+    newArr[i]=callback(arr[i],i);
+  return newArr;
+}
+
 
 function mostCarsByState (cars) {
   //code below here
